@@ -36,7 +36,7 @@ resource "aws_security_group_rule" "endpoint_dns_tcp" {
 
 resource "aws_route53_resolver_endpoint" "resolver_endpoint" {
   direction          = upper(var.direction)
-  security_group_ids = [local.local.security_group_id]
+  security_group_ids = [local.security_group_id]
   name               = var.name
   tags               = var.tags
 
