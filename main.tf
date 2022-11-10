@@ -1,5 +1,5 @@
 locals {
-  security_group_id = var.create_security_group ? aws_security_group.r53_endpoint_sg.id : var.security_group_id
+  security_group_id = var.create_security_group ? aws_security_group.r53_endpoint_sg[0].id : var.security_group_id
 }
 
 resource "aws_security_group" "r53_endpoint_sg" {
