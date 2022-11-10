@@ -5,7 +5,7 @@ output "endpoint_id" {
 
 output "security_group_id" {
   description = "Resolver endpoint security group ID"
-  value       = aws_security_group.r53_endpoint_sg.id
+  value       = local.security_group_id
 }
 
 output "ip_addresses" {
