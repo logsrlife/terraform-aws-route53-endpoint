@@ -21,7 +21,7 @@ resource "aws_security_group_rule" "endpoint_dns_udp" {
   to_port           = var.dns_port
   protocol          = "udp"
   cidr_blocks       = var.allowed_resolvers
-  security_group_id = aws_security_group.r53_endpoint_sg.id[0]
+  security_group_id = aws_security_group.r53_endpoint_sg[0].id
 }
 
 resource "aws_security_group_rule" "endpoint_dns_tcp" {
@@ -31,7 +31,7 @@ resource "aws_security_group_rule" "endpoint_dns_tcp" {
   to_port           = var.dns_port
   protocol          = "tcp"
   cidr_blocks       = var.allowed_resolvers
-  security_group_id = aws_security_group.r53_endpoint_sg.id[0]
+  security_group_id = aws_security_group.r53_endpoint_sg[0].id
 }
 
 resource "aws_route53_resolver_endpoint" "resolver_endpoint" {
