@@ -42,3 +42,16 @@ variable "dns_port" {
   type        = number
   description = "Port used by DNS"
 }
+
+
+variable "create_security_group" {
+  type        = bool
+  default     = true
+  description = "Create Security Group set false to use group provided"
+}
+
+variable "security_group_id" {
+  type        = string
+  default     = null
+  description = "(optional) Use existing Security Group"
+}
